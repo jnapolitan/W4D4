@@ -10,6 +10,28 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul>
+          <% if current_user %>
+            <form class="" action="<%= session_url %>" method="post">
+            <%= auth_token %>
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" name="" value="Log out">
+            </form>
+          <% else %>
+          <form class="" action="<%= new_user_url %>" method="get">
+            <%= auth_token %>
+            <input type="submit" name="" value="Sign up">
+          </form>
+            <form class="" action="<%= new_session_url %>" method="get">
+            <%= auth_token %>
+              <input type="submit" name="" value="Log in">
+            </form>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,18 @@
+<% if flash.now[:errors] %>
+  <ul>
+    <% flash.now[:errors].each do |error| %>
+      <li> <%= error %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<h3><%= message %></h3>
+
+<form action=" <%= action_url %> " method="post">
+  <%= auth_token %>
+  <label>Name:
+    <input type="text" name="band[name]" value="<%= @band.name %>">
+  </label>
+    <input type="submit" name="" value="<%= message %>" id="submit">
+</form>

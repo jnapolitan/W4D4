@@ -35,10 +35,6 @@ body {
   font-family: sans-serif;
 }
 
-.profile-pic {
-  width: 300px;
-}
-
 #submit {
     background-color: #ccc;
     -moz-border-radius: 5px;

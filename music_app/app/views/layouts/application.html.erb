@@ -11,22 +11,23 @@
 
   <body>
     <header>
+      <a href="<%= root_url %>"><img src="<%= image_url('music-app.png') %>" alt="logo"></a>
       <nav>
         <ul>
           <% if current_user %>
             <form class="" action="<%= session_url %>" method="post">
             <%= auth_token %>
-              <input type="hidden" name="_method" value="delete">
-              <input type="submit" name="" value="Log out">
+              <input type="hidden" name="_method" value="delete" id="submit">
+              <input type="submit" name="" value="Log out" id="submit">
             </form>
           <% else %>
           <form class="" action="<%= new_user_url %>" method="get">
             <%= auth_token %>
-            <input type="submit" name="" value="Sign up">
+            <input type="submit" name="" value="Sign up" id="submit">
           </form>
             <form class="" action="<%= new_session_url %>" method="get">
             <%= auth_token %>
-              <input type="submit" name="" value="Log in">
+              <input type="submit" name="" value="Log in" id="submit">
             </form>
           <% end %>
         </ul>
